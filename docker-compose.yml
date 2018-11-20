@@ -1,0 +1,33 @@
+apache:
+  restart: always
+  build: apache
+  ports:
+    - "80:80"
+  volumes:
+    - d:/Workspaces/www:/var/www/html
+    - d:/VirtualMachines/webDevDocker/logs:/var/log
+    - d:/VirtualMachines/webDevDocker/apache/php.ini:/usr/local/etc/php/php.ini
+  links:
+    - database
+    - maildev
+database:
+  restart: always
+  image: mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+phpmyadmin:
+  restart: always
+  image: phpmyadmin/phpmyadmin
+  environment:
+    - PMA_HOST=database
+  ports:
+    - 81:80
+  volumes:
+    - /sessions
+  links:
+    - database
+maildev:
+  restart: always
+  image: djfarrelly/maildev
+  ports:
+    - "82:80"
