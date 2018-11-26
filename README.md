@@ -8,6 +8,7 @@ A docker config to develop with web technologies (PHP, MySQL).
 - PHP
 - MySQL + PhpMyAdmin
 - Maildev
+- Folder (+ logs) shared between host and guest (see `docker-compose.yml`)
 
 ## Usage
 
