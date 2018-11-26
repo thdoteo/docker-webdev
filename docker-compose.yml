@@ -5,8 +5,8 @@ apache:
     - "80:80"
   volumes:
     - d:/Workspaces/www:/var/www/html
-    - d:/VirtualMachines/webDevDocker/logs:/var/log
-    - d:/VirtualMachines/webDevDocker/apache/php.ini:/usr/local/etc/php/php.ini
+    - d:/VirtualMachines/docker-webdev/logs:/var/log
+    - d:/VirtualMachines/docker-webdev/apache/php.ini:/usr/local/etc/php/php.ini
   links:
     - database
     - maildev
