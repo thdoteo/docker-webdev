@@ -12,7 +12,7 @@ apache:
     - maildev
 database:
   restart: always
-  image: mysql
+  image: mysql:5.5.62
   environment:
     - MYSQL_ROOT_PASSWORD=root
 phpmyadmin:

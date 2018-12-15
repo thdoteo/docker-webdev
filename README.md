@@ -23,3 +23,7 @@ Type the following command to stop services:
 List containers and check their status:
 
 	$ docker-compose ps
+
+Connect to a container and type commands in it:
+
+	$ docker exec -t -i [container id] /bin/bash
